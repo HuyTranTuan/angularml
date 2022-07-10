@@ -46,7 +46,7 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "/icons",
-    title: "Icons",
+    title: "Predict",
     rtlTitle: "الرموز",
     icon: "icon-atom",
     class: ""

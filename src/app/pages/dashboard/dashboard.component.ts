@@ -4,6 +4,7 @@ import Chart from 'chart.js';
 
 @Component({
   selector: "app-dashboard",
+  styleUrls: ["dashboard.component.css"],
   templateUrl: "dashboard.component.html"
 })
 export class DashboardComponent implements OnInit {
@@ -31,24 +32,32 @@ export class DashboardComponent implements OnInit {
   public tong_train = 0;
   public tong_test = 0;
   public tong_all = 0;
+  public xtrain = 0;
+  public xtest = 0;
+  public ytrain = 0;
+  public ytest = 0;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.http.get('http://127.0.0.1:5000/home').subscribe((res: any)=> {
-      console.log(res)
-      this.tong_train = res.tong_train
-      this.tong_test = res.tong_test
-      this.tong_all = res.tong_all
-      this.vui = res.vui
-      this.buon = res.buon
-      this.so = res.so
-      this.giandu = res.giandu
-      this.ngacnhien = res.ngacnhien
-      this.rac = res.rac
-      this.yeu = res.yeu
-      this.dataTrain = res.array_train.slice(0, 10);
-      this.dataTest = res.array_test.slice(0, 10);
+      console.log(res);
+      this.tong_train = res.tong_train;
+      this.tong_test = res.tong_test;
+      this.tong_all = res.tong_all;
+      this.vui = res.vui;
+      this.buon = res.buon;
+      this.so = res.so;
+      this.giandu = res.giandu;
+      this.ngacnhien = res.ngacnhien;
+      this.rac = res.rac;
+      this.yeu = res.yeu;
+      this.xtrain = res.xtrain;
+      this.xtest = res.xtest;
+      this.ytrain = res.ytrain;
+      this.ytest = res.ytest;
+      // this.dataTrain = res.array_train.slice(0, 10);
+      // this.dataTest = res.array_test.slice(0, 10);
       for(let i of res.time_accuracy){
         this.dataTime.push(i[0]);
         this.total_time += parseFloat(i[0]);
@@ -424,11 +433,9 @@ export class DashboardComponent implements OnInit {
   
   
   
-      var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+      var chart_labels = ['X_train', 'Y_train', 'X_test', 'Y_test'];
       this.datasets = [
-        [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100],
-        [80, 120, 105, 110, 95, 105, 90, 100, 80, 95, 70, 120],
-        [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130]
+        [this.xtrain, this.xtest, this.ytrain, this.ytest],
       ];
       this.data = this.datasets[0];
   
@@ -439,19 +446,19 @@ export class DashboardComponent implements OnInit {
   
       var gradientStroke = this.ctx.createLinearGradient(0, 230, 0, 50);
   
-      gradientStroke.addColorStop(1, 'rgba(233,32,16,0.2)');
-      gradientStroke.addColorStop(0.4, 'rgba(233,32,16,0.0)');
-      gradientStroke.addColorStop(0, 'rgba(233,32,16,0)'); //red colors
+      gradientStroke.addColorStop(1, 'rgba(29,140,248,0.2)');
+      gradientStroke.addColorStop(0.4, 'rgba(29,140,248,0.0)');
+      gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
   
       var config = {
-        type: 'line',
+        type: 'bar',
         data: {
           labels: chart_labels,
           datasets: [{
-            label: "My First dataset",
+            label: "Data",
             fill: true,
             backgroundColor: gradientStroke,
-            borderColor: '#ec250d',
+            borderColor: '#ecd90d',
             borderWidth: 2,
             borderDash: [],
             borderDashOffset: 0.0,
@@ -469,38 +476,6 @@ export class DashboardComponent implements OnInit {
       };
       this.myChartData = new Chart(this.ctx, config);
   
-  
-      this.canvas = document.getElementById("CountryChart");
-      this.ctx  = this.canvas.getContext("2d");
-      var gradientStroke = this.ctx.createLinearGradient(0, 230, 0, 50);
-  
-      gradientStroke.addColorStop(1, 'rgba(29,140,248,0.2)');
-      gradientStroke.addColorStop(0.4, 'rgba(29,140,248,0.0)');
-      gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
-  
-  
-      var myChart = new Chart(this.ctx, {
-        type: 'bar',
-        responsive: true,
-        legend: {
-          display: false
-        },
-        data: {
-          labels: ['Train', 'Test'],
-          datasets: [{
-            label: "Data",
-            fill: true,
-            backgroundColor: gradientStroke,
-            hoverBackgroundColor: gradientStroke,
-            borderColor: '#1f8ef1',
-            borderWidth: 2,
-            borderDash: [],
-            borderDashOffset: 0.0,
-            data: [this.tong_train, this.tong_test],
-          }]
-        },
-        options: gradientBarChartConfiguration
-      });
     });
     
   }

@@ -4,6 +4,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: "app-icons",
+  styleUrls: ["icons.component.css"],
   templateUrl: "icons.component.html"
 })
 export class IconsComponent implements OnInit {

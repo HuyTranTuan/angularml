@@ -9,16 +9,16 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">Happy</h5>
-                    <span class="h2 font-weight-bold mb-0">{{this.vui}}</span>
+                    <h4 class="card-title text-uppercase text-muted mb-0"><strong>Happy</strong></h4>
+                    <span class="h2 font-weight-bold mb-0" style="font-size: 40px; color: orange; margin-top: 5px;">{{this.vui}}</span>
                   </div>
-                  <div class="col-auto">
+                  <div class="col-auto" style="font-size: 25px; margin-top: 10px; margin-right: 10px;">
                     <div class="icon icon-shape text-white">
                       <i class="fas fa-chart-bar"></i>
                     </div>
                   </div>
                 </div>
-                <p class="mt-3 mb-0 text-muted text-sm">
+                <p class="mt-3 mb-0 text-muted text-sm" style="font-size: 18px;">
                   <span class="text-success mr-2">{{(this.vui/this.tong_train) | percent}}</span>
                   <span class="text-nowrap">Of train data</span>
                 </p>
@@ -30,16 +30,16 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">Sad</h5>
-                    <span class="h2 font-weight-bold mb-0">{{this.buon}}</span>
+                    <h4 class="card-title text-uppercase text-muted mb-0"><strong>Sad</strong></h4>
+                    <span class="h2 font-weight-bold mb-0" style="font-size: 40px; color: orange; margin-top: 5px;">{{this.buon}}</span>
                   </div>
-                  <div class="col-auto">
+                  <div class="col-auto" style="font-size: 25px; margin-top: 10px; margin-right: 10px;">
                     <div class="icon icon-shape text-white">
                       <i class="fas fa-chart-pie"></i>
                     </div>
                   </div>
                 </div>
-                <p class="mt-3 mb-0 text-muted text-sm">
+                <p class="mt-3 mb-0 text-muted text-sm" style="font-size: 18px;">
                   <span class="text-danger mr-2">{{(this.buon/this.tong_train) | percent}}</span>
                   <span class="text-nowrap">Of train data</span>
                 </p>
@@ -51,16 +51,16 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">Love!</h5>
-                    <span class="h2 font-weight-bold mb-0">{{this.yeu}}</span>
+                    <h4 class="card-title text-uppercase text-muted mb-0"><strong>Love</strong></h4>
+                    <span class="h2 font-weight-bold mb-0" style="font-size: 40px; color: orange; margin-top: 5px;">{{this.yeu}}</span>
                   </div>
-                  <div class="col-auto">
+                  <div class="col-auto" style="font-size: 25px; margin-top: 10px; margin-right: 10px;">
                     <div class="icon icon-shape text-white">
                       <i class="fas fa-users"></i>
                     </div>
                   </div>
                 </div>
-                <p class="mt-3 mb-0 text-muted text-sm">
+                <p class="mt-3 mb-0 text-muted text-sm" style="font-size: 18px;">
                   <span class="text-warning mr-2">{{(this.yeu/this.tong_train) | percent}}</span>
                   <span class="text-nowrap">Of train data</span>
                 </p>
@@ -72,16 +72,16 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col">
-                    <h5 class="card-title text-uppercase text-muted mb-0">Angry</h5>
-                    <span class="h2 font-weight-bold mb-0">{{this.giandu}}</span>
+                    <h4 class="card-title text-uppercase text-muted mb-0"><strong>Angry</strong></h4>
+                    <span class="h2 font-weight-bold mb-0" style="font-size: 40px; color: orange; margin-top: 5px;">{{this.giandu}}</span>
                   </div>
-                  <div class="col-auto">
+                  <div class="col-auto" style="font-size: 25px; margin-top: 10px; margin-right: 10px;">
                     <div class="icon icon-shape text-white">
                       <i class="fas fa-percent"></i>
                     </div>
                   </div>
                 </div>
-                <p class="mt-3 mb-0 text-muted text-sm">
+                <p class="mt-3 mb-0 text-muted text-sm" style="font-size: 18px;">
                   <span class="text-success mr-2">{{(this.giandu/this.tong_train) | percent}}</span>
                   <span class="text-nowrap">Of train data</span>
                 </p>
@@ -92,14 +92,29 @@
       </div>
     </div>
   </div>
+  
   <div class=" row">
+    <div class=" col-lg-4">
+      <div class="card card-chart" style="height: 330px;text-align: center; background-color: transparent;">
+        <div class="loader">
+          <div class="rocket">
+            <i class="fa-solid fa-rocket"></i>
+            <i class="fa-solid fa-cloud" style="--i:0"></i>
+            <i class="fa-solid fa-cloud" style="--i:1"></i>
+            <i class="fa-solid fa-cloud" style="--i:2"></i>
+            <i class="fa-solid fa-cloud" style="--i:3"></i>
+          </div>
+          <span><i></i></span>
+        </div>
+      </div>
+    </div>
     <div class=" col-lg-4">
       <div class=" card card-chart">
         <div class=" card-header">
-          <h5 class=" card-category">Total Time</h5>
-          <h3 class=" card-title">
+          <h4 class=" card-category">Total Time</h4>
+          <h2 class=" card-title">
             <i class=" tim-icons icon-bell-55 text-danger-states"> </i> {{ this.total_time }} second
-          </h3>
+          </h2>
         </div>
         <div class=" card-body">
           <div class=" chart-area"><canvas id="chartLineRed"> </canvas></div>
@@ -109,23 +124,10 @@
     <div class=" col-lg-4">
       <div class=" card card-chart">
         <div class=" card-header">
-          <h5 class=" card-category">Total Data</h5>
-          <h3 class=" card-title">
-            <i class=" tim-icons icon-delivery-fast text-info"> </i> {{this.tong_all}}
-          </h3>
-        </div>
-        <div class=" card-body">
-          <div class=" chart-area"><canvas id="CountryChart"> </canvas></div>
-        </div>
-      </div>
-    </div>
-    <div class=" col-lg-4">
-      <div class=" card card-chart">
-        <div class=" card-header">
-          <h5 class=" card-category">Best Accuracy</h5>
-          <h3 class=" card-title">
+          <h4 class=" card-category">Best Accuracy</h4>
+          <h2 class=" card-title">
             <i class=" tim-icons icon-send text-success"> </i> {{this.dataAccuracy[1]}}
-          </h3>
+          </h2>
         </div>
         <div class=" card-body">
           <div class=" chart-area"><canvas id="chartLineGreen"> </canvas></div>
@@ -139,10 +141,10 @@
         <div class=" card-header">
           <div class=" row">
             <div class=" col-sm-6 text-left">
-              <h5 class=" card-category">Total Shipments</h5>
-              <h2 class=" card-title">Performance</h2>
+              <h4 class=" card-category">Total Train Data</h4>
+              <h2 class=" card-title"><i class=" tim-icons icon-delivery-fast text-info"> </i> {{ this.tong_all }}</h2>
             </div>
-            <div class=" col-sm-6">
+            <!-- <div class=" col-sm-6">
               <div
                 class=" btn-group btn-group-toggle float-right"
                 data-toggle="buttons"
@@ -188,7 +190,7 @@
                   </span>
                 </label>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class=" card-body">
@@ -197,4 +199,5 @@
       </div>
     </div>
   </div>
+  
 </div>
