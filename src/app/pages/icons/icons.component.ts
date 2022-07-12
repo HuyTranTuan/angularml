@@ -30,7 +30,6 @@ export class IconsComponent implements OnInit {
   ngOnInit() {
     if(this.queryString && this.queryString!=='' && this.queryString!==' '){
       this.http.post(`http://127.0.0.1:5000/predict?string=`+ this.queryString,'').subscribe((res: any)=> {
-        console.log(res)
         this.svm = res.svm;
         this.logistic_regression = res.linear_classifier;
         this.navie_bayes = res.naive_bayes;
@@ -51,9 +50,7 @@ export class IconsComponent implements OnInit {
       this.example3 = '';
       this.example4 = '';
     }else{
-      console.log(this.string)
       this.http.post(`http://127.0.0.1:5000/predict?string=`+ this.string,'').subscribe((res: any)=> {
-        console.log(res)
         this.svm = res.svm;
         this.logistic_regression = res.linear_classifier;
         this.navie_bayes = res.naive_bayes;

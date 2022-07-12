@@ -41,7 +41,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.http.get('http://127.0.0.1:5000/home').subscribe((res: any)=> {
-      console.log(res);
       this.tong_train = res.tong_train;
       this.tong_test = res.tong_test;
       this.tong_all = res.tong_all;
@@ -56,16 +55,12 @@ export class DashboardComponent implements OnInit {
       this.xtest = res.xtest;
       this.ytrain = res.ytrain;
       this.ytest = res.ytest;
-      // this.dataTrain = res.array_train.slice(0, 10);
-      // this.dataTest = res.array_test.slice(0, 10);
       for(let i of res.time_accuracy){
         this.dataTime.push(i[0]);
         this.total_time += parseFloat(i[0]);
         this.dataAccuracy.push(i[1]);
       }
       this.total_time = (Math.round(this.total_time));
-      console.log(this.dataTime);
-      console.log(this.dataAccuracy);
 
       var gradientChartOptionsConfigurationWithTooltipBlue: any = {
         maintainAspectRatio: false,
