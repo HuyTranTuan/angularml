@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router, ActivatedRoute, NavigationStart, NavigationEnd, Event } from '@angular/router';
 
 declare interface RouteInfo {
   path: string;
@@ -74,16 +75,55 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
+  queryString = '';
 
-  constructor() {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.queryString = params.predict
+    })
+    this.router.events.subscribe((event: Event) => {
+      if(event instanceof NavigationEnd){
+        if(this.queryString && this.queryString !== ' ' && this.queryString !== ''){
+          this.initColor(this.router.url.split('?predict=')[0]);
+        }else{
+          this.initColor(this.router.url);
+        }
+      }
+    })
+  }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+    if(this.queryString && this.queryString !== ' ' && this.queryString !== '' && this.queryString !== null){
+      this.initColor(this.router.url.split('?predict=')[0]);
+    }else{
+      this.initColor(this.router.url);
+    }
   }
   isMobileMenu() {
     if (window.innerWidth > 991) {
       return false;
     }
     return true;
+  }
+
+  initColor(string){
+    for(let i of this.menuItems){
+      if(i.path === string){
+        i.class = "active-element-sidebar"
+      }else{
+        i.class = "inactive-element-sidebar"
+      }
+    }
+  }
+
+  changeColor(string){
+    for(let i of this.menuItems){
+      if(i.icon === string){
+        i.class = "active-element-sidebar"
+      }else{
+        i.class = "inactive-element-sidebar"
+      }
+    }
   }
 }

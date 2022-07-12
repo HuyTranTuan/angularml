@@ -5,7 +5,7 @@
         <!-- Card stats -->
         <div class="row">
           <div class="col-xl-3 col-lg-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card card-stats mb-4 mb-xl-0 first-row-card">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
@@ -26,7 +26,7 @@
             </div>
           </div>
           <div class="col-xl-3 col-lg-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card card-stats mb-4 mb-xl-0 first-row-card">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
@@ -47,7 +47,7 @@
             </div>
           </div>
           <div class="col-xl-3 col-lg-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card card-stats mb-4 mb-xl-0 first-row-card">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
@@ -68,7 +68,7 @@
             </div>
           </div>
           <div class="col-xl-3 col-lg-6">
-            <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card card-stats mb-4 mb-xl-0 first-row-card">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
@@ -109,9 +109,9 @@
       </div>
     </div>
     <div class=" col-lg-4">
-      <div class=" card card-chart">
+      <div class=" card card-chart hover-animate">
         <div class=" card-header">
-          <h4 class=" card-category">Total Time</h4>
+          <h4 class=" card-category cart-title">Total Time</h4>
           <h2 class=" card-title">
             <i class=" tim-icons icon-bell-55 text-danger-states"> </i> {{ this.total_time }} second
           </h2>
@@ -122,9 +122,9 @@
       </div>
     </div>
     <div class=" col-lg-4">
-      <div class=" card card-chart">
+      <div class=" card card-chart hover-animate">
         <div class=" card-header">
-          <h4 class=" card-category">Best Accuracy</h4>
+          <h4 class=" card-category cart-title">Best Accuracy</h4>
           <h2 class=" card-title">
             <i class=" tim-icons icon-send text-success"> </i> {{this.dataAccuracy[1]}}
           </h2>
@@ -135,13 +135,13 @@
       </div>
     </div>
   </div>
-  <div class=" row">
+  <div class=" row" style="margin-top: 20px;">
     <div class=" col-12">
-      <div class=" card card-chart">
+      <div class=" card card-chart hover-animate">
         <div class=" card-header">
           <div class=" row">
             <div class=" col-sm-6 text-left">
-              <h4 class=" card-category">Total Train Data</h4>
+              <h4 class=" card-category cart-title">Total Train Data</h4>
               <h2 class=" card-title"><i class=" tim-icons icon-delivery-fast text-info"> </i> {{ this.tong_all }}</h2>
             </div>
             <!-- <div class=" col-sm-6">
@@ -194,7 +194,7 @@
           </div>
         </div>
         <div class=" card-body">
-          <div class=" chart-area"><canvas id="chartBig1"> </canvas></div>
+          <div class=" chart-area" style="height: 300px;"><canvas id="chartBig1"> </canvas></div>
         </div>
       </div>
     </div>

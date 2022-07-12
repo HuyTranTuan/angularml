@@ -1,0 +1,7 @@
+.active-element-sidebar {
+    background: linear-gradient(#205072, #329D9C);
+}
+
+.inactive-element-sidebar {
+    background-color: transparent;
+}

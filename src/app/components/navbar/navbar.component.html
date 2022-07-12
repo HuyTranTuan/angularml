@@ -119,8 +119,9 @@
     <input
       class=" form-control"
       id="inlineFormInputGroup"
-      placeholder="SEARCH"
+      placeholder="Quick Predict"
       type="text"
+      (keyup.enter)="onSubmitEvent($event);modal.dismiss('Cross click')"
     />
 
     <button

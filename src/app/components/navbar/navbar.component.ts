@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef, OnDestroy } from "@angular/core";
 import { ROUTES } from "../sidebar/sidebar.component";
 import { Location } from "@angular/common";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute  } from "@angular/router";
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     location: Location,
     private element: ElementRef,
     private router: Router,
+    private activatedRoute: ActivatedRoute,
     private modalService: NgbModal
   ) {
     this.location = location;
@@ -192,5 +193,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(){
      window.removeEventListener("resize", this.updateColor);
+  }
+
+  onSubmitEvent(event: any){
+    this.router.navigate(['/icons'], { queryParams: {predict: event.target.value} });
   }
 }
