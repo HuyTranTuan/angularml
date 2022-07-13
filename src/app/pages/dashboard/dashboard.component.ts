@@ -361,7 +361,7 @@ export class DashboardComponent implements OnInit {
       gradientStroke.addColorStop(0, 'rgba(233,32,16,0)'); //red colors
   
       var data = {
-        labels: ['Navie', 'Logistic', 'SVM', 'LSTM'],
+        labels: ['Naive', 'Logistic', 'SVM', 'LSTM'],
         datasets: [{
           label: "Time",
           fill: true,
@@ -399,7 +399,7 @@ export class DashboardComponent implements OnInit {
       gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); //green colors
   
       var data2 = {
-        labels: ['Navie', 'Logistic', 'SVM', 'LSTM'],
+        labels: ['Naive', 'Logistic', 'SVM', 'LSTM'],
         datasets: [{
           label: "Accuracy",
           fill: true,
