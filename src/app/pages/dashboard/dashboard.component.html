@@ -4,13 +4,13 @@
       <div class="header-body">
         <!-- Card stats -->
         <div class="row">
-          <div class="col-xl-3 col-lg-6">
+          <div class="col-xl-4 col-lg-6">
             <div class="card card-stats mb-4 mb-xl-0 first-row-card">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
                     <h4 class="card-title text-uppercase text-muted mb-0"><strong>Happy</strong></h4>
-                    <span class="h2 font-weight-bold mb-0" style="font-size: 40px; color: orange; margin-top: 5px;">{{this.vui}}</span>
+                    <span class="h2 font-weight-bold mb-0" style="font-size: 40px; color: orange; margin-top: 5px;">{{this.hanhphuc}}</span>
                   </div>
                   <div class="col-auto" style="font-size: 25px; margin-top: 10px; margin-right: 10px;">
                     <div class="icon icon-shape text-white">
@@ -19,19 +19,19 @@
                   </div>
                 </div>
                 <p class="mt-3 mb-0 text-muted text-sm" style="font-size: 18px;">
-                  <span class="text-success mr-2">{{(this.vui/this.tong_train) | percent}}</span>
+                  <span class="text-success mr-2">{{(this.hanhphuc/this.tong_train) | percent}}</span>
                   <span class="text-nowrap">Of train data</span>
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-xl-3 col-lg-6">
+          <div class="col-xl-4 col-lg-6">
             <div class="card card-stats mb-4 mb-xl-0 first-row-card">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
                     <h4 class="card-title text-uppercase text-muted mb-0"><strong>Sad</strong></h4>
-                    <span class="h2 font-weight-bold mb-0" style="font-size: 40px; color: orange; margin-top: 5px;">{{this.buon}}</span>
+                    <span class="h2 font-weight-bold mb-0" style="font-size: 40px; color: orange; margin-top: 5px;">{{this.buonba}}</span>
                   </div>
                   <div class="col-auto" style="font-size: 25px; margin-top: 10px; margin-right: 10px;">
                     <div class="icon icon-shape text-white">
@@ -40,19 +40,19 @@
                   </div>
                 </div>
                 <p class="mt-3 mb-0 text-muted text-sm" style="font-size: 18px;">
-                  <span class="text-danger mr-2">{{(this.buon/this.tong_train) | percent}}</span>
+                  <span class="text-danger mr-2">{{(this.buonba/this.tong_train) | percent}}</span>
                   <span class="text-nowrap">Of train data</span>
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-xl-3 col-lg-6">
+          <div class="col-xl-4 col-lg-6">
             <div class="card card-stats mb-4 mb-xl-0 first-row-card">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
-                    <h4 class="card-title text-uppercase text-muted mb-0"><strong>Love</strong></h4>
-                    <span class="h2 font-weight-bold mb-0" style="font-size: 40px; color: orange; margin-top: 5px;">{{this.yeu}}</span>
+                    <h4 class="card-title text-uppercase text-muted mb-0"><strong>Angry</strong></h4>
+                    <span class="h2 font-weight-bold mb-0" style="font-size: 40px; color: orange; margin-top: 5px;">{{this.phanno}}</span>
                   </div>
                   <div class="col-auto" style="font-size: 25px; margin-top: 10px; margin-right: 10px;">
                     <div class="icon icon-shape text-white">
@@ -61,28 +61,72 @@
                   </div>
                 </div>
                 <p class="mt-3 mb-0 text-muted text-sm" style="font-size: 18px;">
-                  <span class="text-warning mr-2">{{(this.yeu/this.tong_train) | percent}}</span>
+                  <span class="text-warning mr-2">{{(this.phanno/this.tong_train) | percent}}</span>
                   <span class="text-nowrap">Of train data</span>
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-xl-3 col-lg-6">
+        </div>
+        <div class="row" style="margin-top: 40px;">
+          <div class="col-xl-4 col-lg-6">
             <div class="card card-stats mb-4 mb-xl-0 first-row-card">
               <div class="card-body">
                 <div class="row">
                   <div class="col">
-                    <h4 class="card-title text-uppercase text-muted mb-0"><strong>Angry</strong></h4>
-                    <span class="h2 font-weight-bold mb-0" style="font-size: 40px; color: orange; margin-top: 5px;">{{this.giandu}}</span>
+                    <h4 class="card-title text-uppercase text-muted mb-0"><strong>Fear</strong></h4>
+                    <span class="h2 font-weight-bold mb-0" style="font-size: 40px; color: orange; margin-top: 5px;">{{this.sohai}}</span>
                   </div>
                   <div class="col-auto" style="font-size: 25px; margin-top: 10px; margin-right: 10px;">
                     <div class="icon icon-shape text-white">
-                      <i class="fas fa-percent"></i>
+                      <i class="fas fa-chart-bar"></i>
                     </div>
                   </div>
                 </div>
                 <p class="mt-3 mb-0 text-muted text-sm" style="font-size: 18px;">
-                  <span class="text-success mr-2">{{(this.giandu/this.tong_train) | percent}}</span>
+                  <span class="text-success mr-2">{{(this.sohai/this.tong_train) | percent}}</span>
+                  <span class="text-nowrap">Of train data</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-6">
+            <div class="card card-stats mb-4 mb-xl-0 first-row-card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <h4 class="card-title text-uppercase text-muted mb-0"><strong>Surprise</strong></h4>
+                    <span class="h2 font-weight-bold mb-0" style="font-size: 40px; color: orange; margin-top: 5px;">{{this.ngacnhien}}</span>
+                  </div>
+                  <div class="col-auto" style="font-size: 25px; margin-top: 10px; margin-right: 10px;">
+                    <div class="icon icon-shape text-white">
+                      <i class="fas fa-chart-pie"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="mt-3 mb-0 text-muted text-sm" style="font-size: 18px;">
+                  <span class="text-danger mr-2">{{(this.ngacnhien/this.tong_train) | percent}}</span>
+                  <span class="text-nowrap">Of train data</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-6">
+            <div class="card card-stats mb-4 mb-xl-0 first-row-card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <h4 class="card-title text-uppercase text-muted mb-0"><strong>Info</strong></h4>
+                    <span class="h2 font-weight-bold mb-0" style="font-size: 40px; color: orange; margin-top: 5px;">{{this.thongtin}}</span>
+                  </div>
+                  <div class="col-auto" style="font-size: 25px; margin-top: 10px; margin-right: 10px;">
+                    <div class="icon icon-shape text-white">
+                      <i class="fas fa-users"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="mt-3 mb-0 text-muted text-sm" style="font-size: 18px;">
+                  <span class="text-warning mr-2">{{(this.thongtin/this.tong_train) | percent}}</span>
                   <span class="text-nowrap">Of train data</span>
                 </p>
               </div>
@@ -126,7 +170,7 @@
         <div class=" card-header">
           <h4 class=" card-category cart-title">Best Accuracy</h4>
           <h2 class=" card-title">
-            <i class=" tim-icons icon-send text-success"> </i> {{this.dataAccuracy[1]}}
+            <i class=" tim-icons icon-send text-success"> </i> {{this.dataAccuracy[0]}}
           </h2>
         </div>
         <div class=" card-body">

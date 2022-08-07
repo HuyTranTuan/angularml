@@ -22,13 +22,12 @@ export class DashboardComponent implements OnInit {
   public total_time = 0;
   public dataTrain: any;
   public dataTest: any;
-  public vui = 0;
-  public buon = 0;
-  public so = 0;
-  public giandu = 0;
+  public hanhphuc = 0;
+  public buonba = 0;
+  public sohai = 0;
+  public phanno = 0;
   public ngacnhien = 0;
-  public rac = 0;
-  public yeu = 0;
+  public thongtin = 0;
   public tong_train = 0;
   public tong_test = 0;
   public tong_all = 0;
@@ -37,29 +36,36 @@ export class DashboardComponent implements OnInit {
   public ytrain = 0;
   public ytest = 0;
 
+  public bert_time = 23.633352279663086;
+  public bert_acc = 0.36507936507936506;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get('http://172.28.0.2').subscribe((res: any)=>{
+      console.log(res);
+    })
     this.http.get('http://127.0.0.1:5000/home').subscribe((res: any)=> {
       this.tong_train = res.tong_train;
       this.tong_test = res.tong_test;
       this.tong_all = res.tong_all;
-      this.vui = res.vui;
-      this.buon = res.buon;
-      this.so = res.so;
-      this.giandu = res.giandu;
+      this.hanhphuc = res.hanhphuc;
+      this.buonba = res.buonba;
+      this.sohai = res.sohai;
+      this.phanno = res.phanno;
       this.ngacnhien = res.ngacnhien;
-      this.rac = res.rac;
-      this.yeu = res.yeu;
+      this.thongtin = res.thongtin;
       this.xtrain = res.xtrain;
       this.xtest = res.xtest;
       this.ytrain = res.ytrain;
       this.ytest = res.ytest;
+      console.log (res)
       for(let i of res.time_accuracy){
         this.dataTime.push(i[0]);
         this.total_time += parseFloat(i[0]);
         this.dataAccuracy.push(i[1]);
       }
+      this.total_time = this.total_time + this.bert_time;
       this.total_time = (Math.round(this.total_time));
 
       var gradientChartOptionsConfigurationWithTooltipBlue: any = {
@@ -361,7 +367,7 @@ export class DashboardComponent implements OnInit {
       gradientStroke.addColorStop(0, 'rgba(233,32,16,0)'); //red colors
   
       var data = {
-        labels: ['Naive', 'Logistic', 'SVM', 'LSTM'],
+        labels: ['Naive', 'Logistic', 'SVM', 'LSTM', 'BERT'],
         datasets: [{
           label: "Time",
           fill: true,
@@ -377,7 +383,7 @@ export class DashboardComponent implements OnInit {
           pointHoverRadius: 4,
           pointHoverBorderWidth: 15,
           pointRadius: 4,
-          data: [this.dataTime[0], this.dataTime[1], this.dataTime[2], this.dataTime[3]],
+          data: [this.dataTime[0], this.dataTime[1], this.dataTime[2], this.dataTime[3], this.bert_time],
         }]
       };
   
@@ -399,7 +405,7 @@ export class DashboardComponent implements OnInit {
       gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); //green colors
   
       var data2 = {
-        labels: ['Naive', 'Logistic', 'SVM', 'LSTM'],
+        labels: ['Naive', 'Logistic', 'SVM', 'LSTM', 'BERT'],
         datasets: [{
           label: "Accuracy",
           fill: true,
@@ -415,7 +421,7 @@ export class DashboardComponent implements OnInit {
           pointHoverRadius: 4,
           pointHoverBorderWidth: 15,
           pointRadius: 4,
-          data: [this.dataAccuracy[0], this.dataAccuracy[1], this.dataAccuracy[2], this.dataAccuracy[3]],
+          data: [this.dataAccuracy[0], this.dataAccuracy[1], this.dataAccuracy[2], this.dataAccuracy[3], this.bert_acc],
         }]
       };
   
