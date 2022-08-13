@@ -59,3 +59,23 @@
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+
+.class-white{
+    color: rgb(198, 204, 40)
+}
+.class-pink{
+    color: rgb(217, 143, 155)
+}
+.class-blue{
+    color: rgb(54, 54, 214)
+}
+.class-green{
+    color: rgb(72, 165, 72)
+}
+.class-red{
+    color: rgb(235, 41, 41)
+}
+.class-purple{
+    color: rgb(177, 4, 177)
+}

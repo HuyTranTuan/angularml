@@ -51,5 +51,55 @@
         </div>
       </div>
     </div>
+    <div class=" col-md-12">
+      <div class=" card card-plain hover-animate card3">
+        <div class=" card-header" style="background-color: #6a193f;">
+          <h4 class=" card-title" style="color: khaki;font-size: 20px; font-weight: 600;">Data</h4>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>Labels</th>
+                  <th class=" text-center">Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of this.dataLabel">
+                  <td style="white-space: nowrap; overflow: hidden;">{{item[0]}}</td>
+                  <td class=" text-center"  style="white-space: nowrap; overflow: hidden;">{{item[1]}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class=" col-md-12">
+      <div class=" card card-plain hover-animate card3">
+        <div class=" card-header" style="background-color: #6a193f;">
+          <h4 class=" card-title" style="color: khaki;font-size: 20px; font-weight: 600;">Example</h4>
+        </div>
+        <div class=" card-body">
+          <div class=" table-responsive">
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>Sentences</th>
+                  <th class=" text-center">Labels</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of this.dataEx">
+                  <td style="white-space: nowrap; overflow: hidden;">{{item[0]}}</td>
+                  <td class=" text-center"  style="white-space: nowrap; overflow: hidden;">{{item[1]}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -20,6 +20,10 @@
     border: 4px solid goldenrod;
 }
 
+.card3{
+    border: 4px solid #6a193f;
+}
+
 tbody tr:nth-child(even) {background: rgb(63, 64, 58)}
 tbody tr:nth-child(odd) {background: rgb(46, 55, 64)}
 
